@@ -1,0 +1,55 @@
+﻿@model ClassTrackerFE.Models.TafeClass
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>TafeClass</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            @Html.HiddenFor( C => C.TafeClassId)
+
+
+            <div class="form-group">
+                <label asp-for="TafeClassName" class="control-label"></label>
+                <input asp-for="TafeClassName" class="form-control" />
+                <span asp-validation-for="TafeClassName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TafeClassLocation" class="control-label"></label>
+                <input asp-for="TafeClassLocation" class="form-control" />
+                <span asp-validation-for="TafeClassLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TafeClassStartDT" class="control-label"></label>
+                <input asp-for="TafeClassStartDT" class="form-control" />
+                <span asp-validation-for="TafeClassStartDT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DurationMinutes" class="control-label"></label>
+                <input asp-for="DurationMinutes" class="form-control" />
+                <span asp-validation-for="DurationMinutes" class="text-danger"></span>
+            </div>
+
+            @Html.HiddenFor(C => C.TeacherId)
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
