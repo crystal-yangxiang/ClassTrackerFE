@@ -10,6 +10,7 @@ namespace ClassTrackerFE.Controllers
 
         private readonly HttpClient _client;
         // Constructor Injection
+        // test
 
         public AuthController(IHttpClientFactory httpClientFactory)
         {
